@@ -2,24 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title  -->
-    <title>Karl - Fashion Ecommerce Template | Shop</title>
-
-    <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Responsive CSS -->
-    <link href="css/responsive.css" rel="stylesheet">
+ @includeIf('css-script.head')
 
 </head>
 
@@ -48,7 +31,7 @@
                             <div class="top_single_area d-flex align-items-center">
                                 <!-- Logo Area -->
                                 <div class="top_logo">
-                                    <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                                    <a href="#"><img src={{asset("img/core-img/logo.png")}} alt=""></a>
                                 </div>
                                 <!-- Cart & Menu Area -->
                                 <div class="header-cart-menu d-flex align-items-center ml-auto">
@@ -58,7 +41,7 @@
                                         <!-- Cart List Area Start -->
                                         <ul class="cart-list">
                                             <li>
-                                                <a href="#" class="image"><img src="img/product-img/product-10.jpg" class="cart-thumb" alt=""></a>
+                                                <a href="#" class="image"><img src={{asset("img/product-img/product-10.jpg")}} class="cart-thumb" alt=""></a>
                                                 <div class="cart-item-desc">
                                                     <h6><a href="#">Women's Fashion</a></h6>
                                                     <p>1x - <span class="price">$10</span></p>
@@ -66,7 +49,7 @@
                                                 <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
                                             </li>
                                             <li>
-                                                <a href="#" class="image"><img src="img/product-img/product-11.jpg" class="cart-thumb" alt=""></a>
+                                                <a href="#" class="image"><img src={{asset("img/product-img/product-11.jpg")}} class="cart-thumb" alt=""></a>
                                                 <div class="cart-item-desc">
                                                     <h6><a href="#">Women's Fashion</a></h6>
                                                     <p>1x - <span class="price">$10</span></p>
@@ -111,7 +94,7 @@
 
                                     <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                         <ul class="navbar-nav animated" id="nav">
-                                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                            <li class="nav-item active"><a class="nav-link" href="{{url("/")}}">Home</a></li>
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
@@ -172,7 +155,7 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-5">
                                         <div class="quickview_pro_img">
-                                            <img src="img/product-img/product-1.jpg" alt="">
+                                            <img src={{asset("img/product-img/product-1.jpg")}} alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-7">
@@ -348,7 +331,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex mb-30">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src="img/product-img/product-10.jpg" alt="">
+                                            <img src={{asset("img/product-img/product-10.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Men’s T-shirt</h6>
@@ -358,7 +341,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex mb-30">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src="img/product-img/product-11.jpg" alt="">
+                                            <img src={{asset("img/product-img/product-11.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Blue mini top</h6>
@@ -368,7 +351,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src="img/product-img/product-12.jpg" alt="">
+                                            <img src={{asset("img/product-img/product-12.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Women’s T-shirt</h6>
@@ -396,7 +379,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="single_footer_area">
                             <div class="footer-logo">
-                                <img src="img/core-img/logo.png" alt="">
+                                <img src={{asset("img/core-img/logo.png")}} alt="">
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -464,16 +447,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
     <!-- /.wrapper end -->
 
-    <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+  @includeIf('css-script.script')
 
 </body>
 

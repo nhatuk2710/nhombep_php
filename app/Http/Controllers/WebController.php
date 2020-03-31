@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,10 @@ class WebController extends Controller
         return view('home-page',['new'=>$new]);
     }
 
-    public function list(){
+    public function list($id){
+        $category = Category::find($id);
         $list = Product::all()->take(9);
-        return view('list',['list'=>$list]);
+        return view('list',['list'=>$list,'category'=>$category]);
     }
 
     public function product($id){

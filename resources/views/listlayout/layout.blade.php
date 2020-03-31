@@ -36,7 +36,7 @@
                 <ul id="menu-content" class="menu-content collapse out">
                     <!-- Single Item -->
                     <li data-toggle="collapse" data-target="#women" class="collapsed active">
-                        <a href="#">Woman wear <span class="arrow"></span></a>
+                        <a href="#">Woman wear<span class="arrow"></span></a>
                         <ul class="sub-menu collapse" id="women">
                             <li><a href="#">Midi Dresses</a></li>
                             <li><a href="#">Maxi Dresses</a></li>
@@ -173,7 +173,7 @@
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a class="dropdown-item" href="index.html">Home</a>
+                                                    <a class="dropdown-item" href="{{url("/")}}">Home</a>
                                                     <a class="dropdown-item" href="{{url("/list")}}">Shop</a>
                                                     <a class="dropdown-item" href="product-details.html">Product Details</a>
                                                     <a class="dropdown-item" href="cart.html">Cart</a>
@@ -306,12 +306,14 @@
 
             <div class="karl-projects-menu mb-100">
                 <div class="text-center portfolio-menu">
-                    <button class="btn active" data-filter="*">ALL</button>
-                    <button class="btn" data-filter=".women">WOMAN</button>
-                    <button class="btn" data-filter=".man">MAN</button>
-                    <button class="btn" data-filter=".access">ACCESSORIES</button>
-                    <button class="btn" data-filter=".shoes">shoes</button>
-                    <button class="btn" data-filter=".kids">KIDS</button>
+                    <a class="btn active" data-filter="*">ALL</a>
+                    @foreach(\App\Category::find(3)->take(1)->get() as $y)
+                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">WOMAN</a>
+                    @endforeach
+                    <a class="btn" data-filter=".man">MAN</a>
+                    <a class="btn" data-filter=".access">ACCESSORIES</a>
+                    <a class="btn" data-filter=".shoes">shoes</a>
+                    <a class="btn" data-filter=".kids">KIDS</a>
                 </div>
             </div>
 

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+Route::prefix("admin")->group (function (){
+    include_once("admin/admin.php");
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,6 @@ use Illuminate\Support\Facades\Route;
 //home
 Route::get('/',"WebController@home");
 //list
-Route::get('/list',"WebController@list");
+Route::get('/list/{id}',"WebController@list");
 //product
 Route::get('/product/{id}','WebController@product');
