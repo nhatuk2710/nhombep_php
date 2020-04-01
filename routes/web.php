@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Route::prefix("admin")->group (function (){
-    include_once("admin/admin.php");
+Route::prefix("admin")->middleware("check_admin")->group (function (){
+    include_once("admin.php");
 });
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +23,23 @@ Route::prefix("admin")->group (function (){
 //home
 Route::get('/',"WebController@home");
 //list
-Route::get('/list/{id}',"WebController@list");
+Route::get('/list/{id}',"WebController@list")->middleware("auth");
 //product
 Route::get('/product/{id}','WebController@product');
+
+Auth::routes();
+
+Route::get('/logout',function (){
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect()->to("/login");
+});
+
+//Auth::routes();
+//
+//Route::get('/login', 'HomeController@index')->name('login');
+
+//Auth::routes();
+//
+//Route::get('/register',function (){
+//   return view('Register');
+//});

@@ -307,7 +307,7 @@
             <div class="karl-projects-menu mb-100">
                 <div class="text-center portfolio-menu">
                     <a class="btn active" data-filter="*">ALL</a>
-                    @foreach(\App\Category::find(3)->take(1)->get() as $y)
+                    @foreach(\App\Category::find(1)->take(1)->get() as $y)
                     <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">WOMAN</a>
                     @endforeach
                     <a class="btn" data-filter=".man">MAN</a>
@@ -351,9 +351,7 @@
                             <!-- Single Testimonial Area -->
                             <div class="single-testimonial-area text-center">
                                 <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis.
-                                    Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in
-                                    fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
+                                <h6> Nunc pulvinar molestie sem id blandit.Nunc venenatis interdum mollis.Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
                                         <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">

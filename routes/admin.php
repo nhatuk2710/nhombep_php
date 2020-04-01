@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 //admin
 Route::get('category/',"AdminController@admin");
