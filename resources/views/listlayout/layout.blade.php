@@ -316,8 +316,8 @@
             <div class="karl-projects-menu mb-100">
                 <div class="text-center portfolio-menu">
                     <a class="btn active" data-filter="*">ALL</a>
-                    @foreach(\App\Category::all() as $y)
-                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">WOMAN</a>
+                    @foreach($category->take(1) as $y)
+                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">{{$y->category_name}}</a>
                     @endforeach
                     <a class="btn" data-filter=".man">MAN</a>
                     <a class="btn" data-filter=".access">ACCESSORIES</a>
