@@ -5,35 +5,35 @@
         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
-                <li class="active" data-target="#product_details_slider" data-slide-to="0" href={{asset("img/product-img/product-9.jpg")}}>
+                <li class="active" data-target="#product_details_slider" data-slide-to="0" href={{asset($product->thumbnail)}}>
                 </li>
-                <li data-target="#product_details_slider" data-slide-to="1" href="img/product-img/product-2.jpg">
+                <li data-target="#product_details_slider" data-slide-to="1" href={{asset($product->thumbnail)}}>
                 </li>
-                <li data-target="#product_details_slider" data-slide-to="2" href="img/product-img/product-3.jpg">
+                <li data-target="#product_details_slider" data-slide-to="2" href={{asset($product->thumbnail)}}>
                 </li>
-                <li data-target="#product_details_slider" data-slide-to="3" href="img/product-img/product-4.jpg">
+                <li data-target="#product_details_slider" data-slide-to="3"href={{asset($product->thumbnail)}}>
                 </li>
             </ol>
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a class="gallery_img" href={{asset("img/product-img/product-9.jpg")}}>
-                        <img class="d-block w-100" src={{asset("img/product-img/product-9.jpg")}} >
+                    <a class="gallery_img" href=href={{asset($product->thumbnail)}}>
+                        <img class="d-block w-100" src={{asset($product->thumbnail)}}>
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a class="gallery_img" href={{asset("img/product-img/product-2.jpg")}}>
-                        <img class="d-block w-100" src={{asset("img/product-img/product-2.jpg")}}>
+                    <a class="gallery_img" href={{asset($product->thumbnail)}}>
+                        <img class="d-block w-100" src={{asset($product->thumbnail)}}>
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a class="gallery_img" href={{asset("img/product-img/product-3.jpg")}}>
-                        <img class="d-block w-100" src={{asset("img/product-img/product-3.jpg")}}>
+                    <a class="gallery_img" href={{asset($product->thumbnail)}}>
+                        <img class="d-block w-100" src={{asset($product->thumbnail)}}>
                     </a>
                 </div>
                 <div class="carousel-item">
-                    <a class="gallery_img" href={{asset("img/product-img/product-4.jpg")}}>
-                        <img class="d-block w-100" src={{asset("img/product-img/product-4.jpg")}}>
+                    <a class="gallery_img" href={{asset($product->thumbnail)}}>
+                        <img class="d-block w-100" src={{asset($product->thumbnail)}}>
                     </a>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                 <div class="single_gallery_item">
                     <!-- Product Image -->
                     <div class="product-img">
-                        <img src={{asset("img/product-img/product-1.jpg")}} alt="">
+                        <img src={{asset("img/product-img/1.jpg")}} alt="">
                         <div class="product-quicview">
                             <a href="#" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
                         </div>

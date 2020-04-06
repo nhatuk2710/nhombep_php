@@ -123,7 +123,7 @@
                                         @if(isset($cart))
                                             @foreach($cart as $r)
                                                 <li>
-                                                    <a href="#" class="image"><img src={{asset("img/product-img/product-10.jpg")}} class="cart-thumb" alt=""></a>
+                                                    <a href="#" class="image"><img src={{asset("img/product-img/10.jpg")}} class="cart-thumb" alt=""></a>
                                                     <div class="cart-item-desc">
                                                         <h6><a href="#">{{$r->product_name}}</a></h6>
                                                         <p class="text-center">x{{$r->cart_qty}}</p>

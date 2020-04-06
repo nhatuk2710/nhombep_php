@@ -102,7 +102,7 @@
                                     <ul class="cart-list">
 {{--                                        @forelse($cart as $l)--}}
 {{--                                        <li>--}}
-{{--                                            <a href="{{url("/cart")}}" class="image"><img src={{("img/product-img/product-10.jpg")}}--}}
+{{--                                            <a href="{{url("/cart")}}" class="image"><img src={{("img/product-img/10.jpg")}}--}}
 {{--                                                    class="cart-thumb" alt=""></a>--}}
 {{--                                            <div class="cart-item-desc">--}}
 {{--                                                <h6><a href="#">Name:{{$product->product_name}}</a></h6>--}}
@@ -222,7 +222,7 @@
                                 @php $grand_total+=($p->price*$p->cart_qty) @endphp
                                 <tr>
                                 <td class="cart_product_img d-flex align-items-center col-lg-2">
-                                    <img src={{asset("img/product-img/product-1.jpg")}}>
+                                    <img src={{asset("img/product-img/1.jpg")}}>
                                     <h6>{{$p->product_name}}</h6>
                                 </td>
                                 <td>

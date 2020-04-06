@@ -48,7 +48,7 @@
                                             @if(isset($cart))
                                                 @foreach($cart as $r)
                                                     <li>
-                                                        <a href="#" class="image"><img src={{asset("img/product-img/product-10.jpg")}} class="cart-thumb" alt=""></a>
+                                                        <a href="#" class="image"><img src={{asset("img/product-img/10.jpg")}} class="cart-thumb" alt=""></a>
                                                         <div class="cart-item-desc">
                                                             <h6><a href="#">{{$r->product_name}}</a></h6>
                                                             <p class="text-center">x{{$r->cart_qty}}</p>
@@ -159,7 +159,7 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-5">
                                         <div class="quickview_pro_img">
-                                            <img src={{asset("img/product-img/product-1.jpg")}} alt="">
+                                            <img src={{asset("img/product-img/1.jpg")}} alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-7">
@@ -335,7 +335,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex mb-30">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src={{asset("img/product-img/product-10.jpg")}} alt="">
+                                            <img src={{asset("img/product-img/10.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Men’s T-shirt</h6>
@@ -345,7 +345,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex mb-30">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src={{asset("img/product-img/product-11.jpg")}} alt="">
+                                            <img src={{asset("img/product-img/11.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Blue mini top</h6>
@@ -355,7 +355,7 @@
                                     <!-- Single Recommended Product -->
                                     <div class="single-recommended-product d-flex">
                                         <div class="single-recommended-thumb mr-3">
-                                            <img src={{asset("img/product-img/product-12.jpg")}} alt="">
+                                            <img src={{asset("img/product-img/12.jpg")}} alt="">
                                         </div>
                                         <div class="single-recommended-desc">
                                             <h6>Women’s T-shirt</h6>

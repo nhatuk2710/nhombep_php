@@ -146,14 +146,14 @@ class AdminController extends Controller
     public function productUpdate($id,Request $request){
         $product = Product::find($id);
         $request->validate([
-            "product_name"=>"string|unique:product,product_name,".$id,
-            "product_desc"=>"string|unique:product,product_desc,".$id,
-            "thumbnail"=>"string|unique:product,thumbnail,".$id,
-            "gallery"=>"string|unique:product,gallery,".$id,
-            "price"=>"int|unique:product,price,".$id,
-            "quantity"=>"int|unique:product,quantity,".$id,
-            "brand_id"=>"int|unique:product,brand_id,".$id,
-            "category_id"=>"int|unique:product,category_id,".$id,
+            "product_name"=>"string:product,product_name,".$id,
+            "product_desc"=>"string:product,product_desc,".$id,
+            "thumbnail"=>"string:product,thumbnail,".$id,
+            "gallery"=>"string:product,gallery,".$id,
+            "price"=>"int:product,price,".$id,
+            "quantity"=>"int:product,quantity,".$id,
+            "brand_id"=>"int:product,brand_id,".$id,
+            "category_id"=>"int:product,category_id,".$id,
         ]);
         try{
             $product->update([

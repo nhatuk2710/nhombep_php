@@ -123,7 +123,7 @@
                                             @if(isset($cart))
                                             @foreach($cart as $r)
                                                 <li>
-                                                    <a href="#" class="image"><img src={{asset("img/product-img/product-10.jpg")}} class="cart-thumb" alt=""></a>
+                                                    <a href="#" class="image"><img src={{asset("img/product-img/10.jpg")}} class="cart-thumb" alt=""></a>
                                                     <div class="cart-item-desc">
                                                         <h6><a href="#">{{$r->product_name}}</a></h6>
                                                         <p class="text-center">x{{$r->cart_qty}}</p>
@@ -245,7 +245,7 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-5">
                                         <div class="quickview_pro_img">
-                                            <img src={{asset("img/product-img/product-1.jpg")}} alt="">
+                                            <img src={{asset("img/product-img/1.jpg")}} alt="">
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-7">
@@ -316,13 +316,9 @@
             <div class="karl-projects-menu mb-100">
                 <div class="text-center portfolio-menu">
                     <a class="btn active" data-filter="*">ALL</a>
-                    @foreach(\App\Category::find(3)->take(1)->get() as $y)
-                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">Woman</a>
+                    @foreach(\App\Category::take(5)->get() as $y)
+                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">{{$y->category_name}}</a>
                     @endforeach
-                    <a class="btn" data-filter=".man">MAN</a>
-                    <a class="btn" data-filter=".access">ACCESSORIES</a>
-                    <a class="btn" data-filter=".shoes">shoes</a>
-                    <a class="btn" data-filter=".kids">KIDS</a>
                 </div>
             </div>
 

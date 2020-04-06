@@ -43,8 +43,8 @@ $factory->define(\App\Product::class,function (Faker $faker){
     return[
         'product_name'=>$faker->unique()->name,
         'product_desc' => $faker->title,
-        'thumbnail' => $faker->imageUrl(),
-        'gallery' => $faker->imageUrl().",".$faker->imageUrl(),
+        'thumbnail' => 'img/product-img/'.random_int(1,12).'.jpg',
+        'gallery'   =>  'img/product-img/'.random_int(1,12).'.jpg'.",".'img/product-img/'.random_int(1,12).'.jpg',
         'price'=> random_int(1000,100000),
         'quantity'=> random_int(1,15),
         'category_id'=> random_int(1,3),

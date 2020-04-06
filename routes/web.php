@@ -23,7 +23,7 @@ Route::prefix("admin")->middleware("check_admin")->group (function (){
 //home
 Route::get('/',"WebController@home");
 //list
-Route::get('/list/{id}',"WebController@list")->middleware("auth");
+Route::get('/list/{id}',"WebController@list");
 //product
 Route::get('/product/{id}','WebController@product');
 // cart
@@ -36,6 +36,7 @@ Route::get("checkout",'WebController@checkout')->middleware("auth");
 Route::post("checkout",'WebController@placeOrder')->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
 Route::get('checkoutReport','WebController@checkoutReport');
+//login
 Route::post("postLogin","WebController@postLogin");
 
 Auth::routes();
