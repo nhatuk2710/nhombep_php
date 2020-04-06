@@ -360,14 +360,14 @@
                             <!-- Single Testimonial Area -->
                             <div class="single-testimonial-area text-center">
                                 <span class="quote">"</span>
-                                <h6> Nunc pulvinar molestie sem id blandit.Nunc venenatis interdum mollis.Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
+                                <h6>This web have built in 10 days ago, i used lot of my time for searching and copying code on internnet and my teacher.Im very happy and excited when i can do it pretty well </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
                                         <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
+                                        <p>Lê Minh Hằng</p>
+                                        <span>Hà Đông,Vợ Nhật Anh</span>
                                     </div>
                                 </div>
                             </div>
@@ -375,14 +375,14 @@
                             <!-- Single Testimonial Area -->
                             <div class="single-testimonial-area text-center">
                                 <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
+                                <h6>This web have built in 10 days ago, i used lot of my time for searching and copying code on internnet and my teacher.Im very happy and excited when i can do it pretty well </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
                                         <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
+                                        <p>Lê Minh Hằng</p>
+                                        <span>Hà Đông,Vợ Nhật Anh</span>
                                     </div>
                                 </div>
                             </div>
@@ -390,14 +390,14 @@
                             <!-- Single Testimonial Area -->
                             <div class="single-testimonial-area text-center">
                                 <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
+                                <h6>This web have built in 10 days ago, i used lot of my time for searching and copying code on internnet and my teacher.Im very happy and excited when i can do it pretty well </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
                                         <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
+                                        <p>Lê Minh Hằng</p>
+                                        <span>Hà Đông,Vợ Nhật Anh</span>
                                     </div>
                                 </div>
                             </div>

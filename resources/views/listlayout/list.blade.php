@@ -102,7 +102,7 @@
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a class="dropdown-item" href="index.html">Home</a>
+                                                    <a class="dropdown-item" href="{{url("/")}}">Home</a>
                                                     <a class="dropdown-item" href="shop.html">Shop</a>
                                                     <a class="dropdown-item" href="product-details.html">Product Details</a>
                                                     <a class="dropdown-item" href="cart.blade.php">Cart</a>
@@ -118,7 +118,7 @@
                             </div>
                             <!-- Help Line -->
                             <div class="help-line">
-                                <a href="tel:+346573556778"><i class="ti-headphone-alt"></i> +34 657 3556 778</a>
+                                <a href="tel:+346573556778"><i class="ti-headphone-alt"></i> +84 7394385</a>
                             </div>
                         </div>
                     </div>
@@ -387,7 +387,7 @@
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
