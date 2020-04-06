@@ -121,9 +121,10 @@
                                 <!-- Cart List Area Start -->
                                     <ul class="cart-list">
                                         @if(isset($cart))
+                                            @php $grand_total = 0; @endphp
                                             @foreach($cart as $r)
                                                 <li>
-                                                    <a href="#" class="image"><img src={{asset("img/product-img/10.jpg")}} class="cart-thumb" alt=""></a>
+                                                    <a href="#" class="image"><img src={{asset($r->thumbnail)}} class="cart-thumb" alt=""></a>
                                                     <div class="cart-item-desc">
                                                         <h6><a href="#">{{$r->product_name}}</a></h6>
                                                         <p class="text-center">x{{$r->cart_qty}}</p>
@@ -131,12 +132,13 @@
                                                     </div>
                                                     <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
                                                 </li>
+                                                @php $grand_total+=($r->price*$r->cart_qty) @endphp
                                             @endforeach
                                         @else
                                             <h3>No product</h3>
                                         @endif
                                         <li class="total">
-                                            <span class="pull-right">Total: $20.00</span>
+                                            <span class="pull-right">Total: ${{number_format($grand_total,2)}}</span>
                                             <a href="{{url("cart")}}" class="btn btn-sm btn-cart">Cart</a>
                                             <a href="{{url("/checkout")}}" class="btn btn-sm btn-checkout">Checkout</a>
                                         </li>
