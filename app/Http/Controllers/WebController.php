@@ -18,7 +18,7 @@ class WebController extends Controller
 //        if(is_admin()){
 //            die("admin day");
 //        }
-        $new = Product::take(5)->orderBy('created_at','desc')->get();
+        $new = Product::take(6)->orderBy('created_at','desc')->get();
 
         return view('home-page',['new'=>$new]);
     }
