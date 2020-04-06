@@ -15,8 +15,6 @@
 {{--    <link rel="icon" href={{(asset("img/core-img/favicon.ico")}}>--}}
 
 <!-- Core Style CSS -->
-    <link href={{asset("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")}}
-        rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href={{asset("css/core-style.css")}}>
     <link rel="stylesheet" href={{asset("style.css")}}>
 
@@ -318,7 +316,7 @@
             <div class="karl-projects-menu mb-100">
                 <div class="text-center portfolio-menu">
                     <a class="btn active" data-filter="*">ALL</a>
-                    @foreach(\App\Category::find(1)->take(1)->get() as $y)
+                    @foreach(\App\Category::find(2)->take(1)->get() as $y)
                     <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">WOMAN</a>
                     @endforeach
                     <a class="btn" data-filter=".man">MAN</a>
