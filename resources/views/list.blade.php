@@ -81,7 +81,6 @@
                     <p>{{$l->product_name}}</p>
                     <!-- Add to Cart -->
                     <a href="{{url("product/{$l->id}")}}" class="add-to-cart-btn">View product detail</a>
-                    <a href="#" class="btn alert-danger btn-cart">ADD TO CART</a>
                 </div>
             </div>
             @endforeach

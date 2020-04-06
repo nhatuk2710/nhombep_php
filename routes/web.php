@@ -26,6 +26,17 @@ Route::get('/',"WebController@home");
 Route::get('/list/{id}',"WebController@list")->middleware("auth");
 //product
 Route::get('/product/{id}','WebController@product');
+// cart
+Route::get('/shopping/{id}','WebController@shopping')->middleware("auth");
+Route::get("/cart/",'WebController@cart')->middleware("auth");
+Route::get("/clear-cart",'WebController@clearCart')->middleware("auth");
+Route::get("/remove-cart/{id}",'WebController@removeCart')->middleware("auth");
+// checkout
+Route::get("checkout",'WebController@checkout')->middleware("auth");
+Route::post("checkout",'WebController@placeOrder')->middleware("auth");
+Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
+Route::get('checkoutReport','WebController@checkoutReport');
+Route::post("postLogin","WebController@postLogin");
 
 Auth::routes();
 

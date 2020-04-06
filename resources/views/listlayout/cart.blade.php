@@ -9,19 +9,17 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Karl - Fashion Ecommerce Template | Home</title>
+    <title>Karl - Fashion Ecommerce Template | Cart</title>
 
     <!-- Favicon  -->
-{{--    <link rel="icon" href={{(asset("img/core-img/favicon.ico")}}>--}}
+    <link rel="icon" href="img/core-img/favicon.ico">
 
-<!-- Core Style CSS -->
-    <link href={{asset("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")}}
-        rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href={{asset("css/core-style.css")}}>
-    <link rel="stylesheet" href={{asset("style.css")}}>
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Responsive CSS -->
-    <link href={{asset("css/responsive.css")}} rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
 </head>
 
@@ -38,7 +36,7 @@
                 <ul id="menu-content" class="menu-content collapse out">
                     <!-- Single Item -->
                     <li data-toggle="collapse" data-target="#women" class="collapsed active">
-                        <a href="#">Woman wear<span class="arrow"></span></a>
+                        <a href="#">Woman wear <span class="arrow"></span></a>
                         <ul class="sub-menu collapse" id="women">
                             <li><a href="#">Midi Dresses</a></li>
                             <li><a href="#">Maxi Dresses</a></li>
@@ -98,7 +96,7 @@
     <div id="wrapper">
 
         <!-- ****** Header Area Start ****** -->
-        <header class="header_area">
+        <header class="header_area bg-img background-overlay-white" style="background-image: {{url("img/bg-img/bg-1.jpg")}};">
             <!-- Top Header Area Start -->
             <div class="top_header_area">
                 <div class="container h-100">
@@ -108,46 +106,37 @@
                             <div class="top_single_area d-flex align-items-center">
                                 <!-- Logo Area -->
                                 <div class="top_logo">
-                                    <a href="#"><img src={{asset("img/core-img/logo.png")}} alt=""></a>
+                                    <a href="#"><img src="img/core-img/logo.png" alt=""></a>
                                 </div>
                                 <!-- Cart & Menu Area -->
                                 <div class="header-cart-menu d-flex align-items-center ml-auto">
                                     <!-- Cart Area -->
                                     <div class="cart">
-                                        @php $cart = session("cart")  @endphp
-                                            @if(isset($cart))
-                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{count($cart)}}</span> <i class="ti-bag"></i> Your Bag $20</a>
-                                        @else
-                                            <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">0</span> <i class="ti-bag"></i> Your Bag $20</a>
-                                        @endif
-                                            <!-- Cart List Area Start -->
+                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                        <!-- Cart List Area Start -->
                                         <ul class="cart-list">
-                                            @if(isset($cart))
-                                            @foreach($cart as $r)
-                                                <li>
-                                                    <a href="#" class="image"><img src={{asset("img/product-img/product-10.jpg")}} class="cart-thumb" alt=""></a>
-                                                    <div class="cart-item-desc">
-                                                        <h6><a href="#">{{$r->product_name}}</a></h6>
-                                                        <p class="text-center">x{{$r->cart_qty}}</p>
-                                                        <p>${{$r->price}}</p>
-                                                    </div>
-                                                    <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
-                                                </li>
-                                            @endforeach
-                                            @else
-                                                <div class="container">
-                                                <h4>No product</h4>
+                                            <li>
+                                                <a href="#" class="image"><img src="img/product-img/product-10.jpg" class="cart-thumb" alt=""></a>
+                                                <div class="cart-item-desc">
+                                                    <h6><a href="#">Women's Fashion</a></h6>
+                                                    <p>1x - <span class="price">$10</span></p>
                                                 </div>
-                                            @endif
+                                                <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="image"><img src="img/product-img/product-11.jpg" class="cart-thumb" alt=""></a>
+                                                <div class="cart-item-desc">
+                                                    <h6><a href="#">Women's Fashion</a></h6>
+                                                    <p>1x - <span class="price">$10</span></p>
+                                                </div>
+                                                <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
+                                            </li>
                                             <li class="total">
                                                 <span class="pull-right">Total: $20.00</span>
-                                                <a href="{{url("cart")}}" class="btn btn-sm btn-cart">Cart</a>
+                                                <a href="cart.blade.php" class="btn btn-sm btn-cart">Cart</a>
                                                 <a href="checkout-1.html" class="btn btn-sm btn-checkout">Checkout</a>
                                             </li>
                                         </ul>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">ogin</a>
                                     </div>
                                     <div class="header-right-side-menu ml-15">
                                         <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
@@ -184,8 +173,8 @@
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a class="dropdown-item" href="{{url("/")}}">Home</a>
-                                                    <a class="dropdown-item" href="{{url("/list")}}">Shop</a>
+                                                    <a class="dropdown-item" href="index.html">Home</a>
+                                                    <a class="dropdown-item" href="shop.html">Shop</a>
                                                     <a class="dropdown-item" href="product-details.html">Product Details</a>
                                                     <a class="dropdown-item" href="cart.blade.php">Cart</a>
                                                     <a class="dropdown-item" href="checkout.blade.php">Checkout</a>
@@ -229,188 +218,109 @@
         </section>
         <!-- ****** Top Discount Area End ****** -->
 
-        <!-- ****** Welcome Slides Area Start ****** -->
-
-        <!-- ****** Top Catagory Area End ****** -->
-
-        <!-- ****** Quick View Modal Area Start ****** -->
-        <div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-
-                    <div class="modal-body">
-                        <div class="quickview_body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12 col-lg-5">
-                                        <div class="quickview_pro_img">
-                                            <img src={{asset("img/product-img/product-1.jpg")}} alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-7">
-                                        <div class="quickview_pro_des">
-                                            <h4 class="title">Boutique Silk Dress</h4>
-                                            <div class="top_seller_product_rating mb-15">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div>
-                                            <h5 class="price">$120.99 <span>$130</span></h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita quibusdam aspernatur, sapiente consectetur accusantium perspiciatis praesentium eligendi, in fugiat?</p>
-                                         <a href="{{url("/product")}}">View Full Product Details</a>
-                                        </div>
-                                        <!-- Add to Cart Form -->
-                                        <form class="cart" method="post">
+        <!-- ****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href="#"><img src="img/product-img/product-9.jpg" alt="Product"></a>
+                                            <h6>Yellow Cocktail Dress</h6>
+                                        </td>
+                                        <td class="price"><span>$49.88</span></td>
+                                        <td class="qty">
                                             <div class="quantity">
                                                 <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-
-                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-
+                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
                                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                             </div>
-                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
-                                            <!-- Wishlist -->
-                                            <div class="modal_pro_wishlist">
-                                                <a href="wishlist.html" target="_blank"><i class="ti-heart"></i></a>
-                                            </div>
-                                            <!-- Compare -->
-                                            <div class="modal_pro_compare">
-                                                <a href="compare.html" target="_blank"><i class="ti-stats-up"></i></a>
-                                            </div>
-                                        </form>
+                                        </td>
+                                        <td class="total_price"><span>$49.88</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                        <div class="share_wf mt-30">
-                                            <p>Share With Friend</p>
-                                            <div class="_icon">
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="cart-footer d-flex mt-30">
+                            <div class="back-to-shop w-50">
+                                <a href="shop-grid-left-sidebar.html">Continue shooping</a>
                             </div>
+                            <div class="update-checkout w-50 text-right">
+                                <a href="#">clear cart</a>
+                                <a href="#">Update cart</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="coupon-code-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cupon code</h5>
+                                <p>Enter your cupone code</p>
+                            </div>
+                            <form action="#">
+                                <input type="search" name="search" placeholder="#569ab15">
+                                <button type="submit">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="shipping-method-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Shipping method</h5>
+                                <p>Select the one you want</p>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Next day delivery</span><span>$4.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Standard delivery</span><span>$1.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Personal Pickup</span><span>Free</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cart total</h5>
+                                <p>Final info</p>
+                            </div>
+
+                            <ul class="cart-total-chart">
+                                <li><span>Subtotal</span> <span>$59.90</span></li>
+                                <li><span>Shipping</span> <span>Free</span></li>
+                                <li><span><strong>Total</strong></span> <span><strong>$59.90</strong></span></li>
+                            </ul>
+                            <a href="checkout.blade.php" class="btn karl-checkout-btn">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ****** Quick View Modal Area End ****** -->
-
-        <!-- ****** New Arrivals Area Start ****** -->
-        <section class="new_arrivals_area section_padding_100_0 clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section_heading text-center">
-                            <h2>New Arrivals</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="karl-projects-menu mb-100">
-                <div class="text-center portfolio-menu">
-                    <a class="btn active" data-filter="*">ALL</a>
-                    @foreach(\App\Category::find(1)->take(1)->get() as $y)
-                    <a class="btn" href="{{url("list/{$y->id}")}}" data-filter=".women">WOMAN</a>
-                    @endforeach
-                    <a class="btn" data-filter=".man">MAN</a>
-                    <a class="btn" data-filter=".access">ACCESSORIES</a>
-                    <a class="btn" data-filter=".shoes">shoes</a>
-                    <a class="btn" data-filter=".kids">KIDS</a>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row karl-new-arrivals">
-
-                    <!-- Single gallery Item Start -->
-                    @yield('product')
-
-                    <!-- Single gallery Item Start -->
-                </div>
-            </div>
-        </section>
-        <!-- ****** New Arrivals Area End ****** -->
-
-        <!-- ****** Offer Area Start ****** -->
-        @yield('lastbackground')
-        <!-- ****** Offer Area End ****** -->
-
-        <!-- ****** Popular Brands Area Start ****** -->
-        <section class="karl-testimonials-area section_padding_100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section_heading text-center">
-                            <h2>Testimonials</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
-                        <div class="karl-testimonials-slides owl-carousel">
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6> Nunc pulvinar molestie sem id blandit.Nunc venenatis interdum mollis.Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Testimonial Area -->
-                            <div class="single-testimonial-area text-center">
-                                <span class="quote">"</span>
-                                <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
-                                <div class="testimonial-info d-flex align-items-center justify-content-center">
-                                    <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
-                                    </div>
-                                    <div class="testi-data">
-                                        <p>Michelle Williams</p>
-                                        <span>Client, Los Angeles</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- ****** Popular Brands Area End ****** -->
+        <!-- ****** Cart Area End ****** -->
 
         <!-- ****** Footer Area Start ****** -->
         <footer class="footer_area">
@@ -420,7 +330,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="single_footer_area">
                             <div class="footer-logo">
-                                <img src={{asset("img/core-img/logo.png")}} alt="">
+                                <img src="img/core-img/logo.png" alt="">
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -489,15 +399,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- /.wrapper end -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src={{asset("js/jquery/jquery-2.2.4.min.js")}}></script>
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src={{asset("js/popper.min.js")}}></script>
+    <script src="js/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src={{asset("js/bootstrap.min.js")}}></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Plugins js -->
-    <script src={{asset("js/plugins.js")}}></script>
+    <script src="js/plugins.js"></script>
     <!-- Active js -->
-    <script src={{asset("js/active.js")}}></script>
+    <script src="js/active.js"></script>
 
 </body>
 

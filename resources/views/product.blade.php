@@ -1,12 +1,11 @@
 @extends('listlayout.product')
-
 @section('detail')
 <div class="col-12 col-md-6">
     <div class="single_product_thumb">
         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
-                <li class="active" data-target="#product_details_slider" data-slide-to="0" href={{url("img/product-img/product-9.jpg")}}>
+                <li class="active" data-target="#product_details_slider" data-slide-to="0" href={{asset("img/product-img/product-9.jpg")}}>
                 </li>
                 <li data-target="#product_details_slider" data-slide-to="1" href="img/product-img/product-2.jpg">
                 </li>
@@ -74,15 +73,19 @@
         </div>
 
         <!-- Add to Cart Form -->
-        <form class="cart clearfix mb-50 d-flex" method="post">
+        <form class="" method="post">
             <div class="quantity">
-                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value;
-                                    if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value;
-                                    if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+{{--                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value;--}}
+{{--                                    if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>--}}
+{{--                    <input type="text" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="{{$product->quantity}}">--}}
+{{--                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value;--}}
+{{--                                    if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>--}}
             </div>
-            <button type="submit" name="addtocart" value="5" class="btn cart-submit d-block">Add to cart</button>
+            @if(!Auth::check())
+            <a href="#" class="btn cart-submit d-block btn-danger">Add to cart</a>
+                @else
+                <a href="{{url("shopping/{$product->id}")}}" class="btn cart-submit d-block btn-danger">Add to cart</a>
+                @endif
         </form>
 
         <div id="accordion" role="tablist">
@@ -160,7 +163,7 @@
                         <h3 class="product-price">{{$c->price}} VND</h3>
                         <p>{{$c->product_name}}</p>
                         <!-- Add to Cart -->
-                        <a href="#" class=" btn btn-danger btn-xl">ADD TO CART</a>
+                        <a href="{{url("/product/{$c->id}")}}" class="btn add-to-cart-btn">view product detail</a>
                     </div>
                 </div>
                 @endforeach

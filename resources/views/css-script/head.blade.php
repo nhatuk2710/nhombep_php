@@ -11,8 +11,10 @@
 {{--    <link rel="icon" href={{(asset("img/core-img/favicon.ico")}}>--}}
 
 <!-- Core Style CSS -->
+
 <link rel="stylesheet" href={{asset("css/core-style.css")}}>
 <link rel="stylesheet" href={{asset("style.css")}}>
 
 <!-- Responsive CSS -->
 <link href={{asset("css/responsive.css")}} rel="stylesheet">
+
