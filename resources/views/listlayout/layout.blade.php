@@ -367,7 +367,7 @@
                                     </div>
                                     <div class="testi-data">
                                         <p>Lê Minh Hằng</p>
-                                        <span>Hà Đông,Vợ Nhật Anh</span>
+                                        <p>Hà Đông,Vợ Nhật Anh</p>
                                     </div>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                                     </div>
                                     <div class="testi-data">
                                         <p>Lê Minh Hằng</p>
-                                        <span>Hà Đông,Vợ Nhật Anh</span>
+                                        <p>Hà Đông,Vợ Nhật Anh</p>
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +397,7 @@
                                     </div>
                                     <div class="testi-data">
                                         <p>Lê Minh Hằng</p>
-                                        <span>Hà Đông,Vợ Nhật Anh</span>
+                                        <p>Hà Đông,Vợ Nhật Anh</p>
                                     </div>
                                 </div>
                             </div>
