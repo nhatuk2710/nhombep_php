@@ -14,7 +14,7 @@ class Category extends Model
         return $this->hasMany("\App\Product");
     }
 
-    public function Brand(){
-        return $this->hasMany("\App\Brand");
-    }
+//    public function Brand(){
+//        return $this->hasMany("\App\Brand");
+//    }
 }
