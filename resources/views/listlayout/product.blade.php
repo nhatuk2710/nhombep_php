@@ -121,7 +121,6 @@
                                 <!-- Cart List Area Start -->
                                     <ul class="cart-list">
                                         @if(isset($cart))
-                                            @php $grand_total = 0; @endphp
                                             @foreach($cart as $r)
                                                 <li>
                                                     <a href="#" class="image"><img src={{asset($r->thumbnail)}} class="cart-thumb" alt=""></a>
@@ -138,6 +137,7 @@
                                             <h3>No product</h3>
                                         @endif
                                         <li class="total">
+                                            @php $grand_total = 0; @endphp
                                             <span class="pull-right">Total: ${{number_format($grand_total,2)}}</span>
                                             <a href="{{url("cart")}}" class="btn btn-sm btn-cart">Cart</a>
                                             <a href="{{url("/checkout")}}" class="btn btn-sm btn-checkout">Checkout</a>
