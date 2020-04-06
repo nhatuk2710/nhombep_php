@@ -81,11 +81,11 @@
 {{--                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value;--}}
 {{--                                    if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>--}}
             </div>
-            @if(!Auth::check())
+{{--            @if(!Auth::check())--}}
             <a href="#" class="btn cart-submit d-block btn-danger">Add to cart</a>
-                @else
+{{--                @else--}}
                 <a href="{{url("shopping/{$product->id}")}}" class="btn cart-submit d-block btn-danger">Add to cart</a>
-                @endif
+{{--                @endif--}}
         </form>
 
         <div id="accordion" role="tablist">
