@@ -82,7 +82,7 @@
 {{--                                    if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>--}}
             </div>
 {{--            @if(!Auth::check())--}}
-            <a href="#" class="btn cart-submit d-block btn-danger">Add to cart</a>
+{{--            <a href="#" class="btn cart-submit d-block btn-danger">Add to cart</a>--}}
 {{--                @else--}}
                 <a href="{{url("shopping/{$product->id}")}}" class="btn cart-submit d-block btn-danger">Add to cart</a>
 {{--                @endif--}}
