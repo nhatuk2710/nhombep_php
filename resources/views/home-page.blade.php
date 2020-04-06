@@ -131,7 +131,7 @@
                });
             });
         </script>
-        @endif
+{{--        @endif--}}
     @foreach($new as $n)
     <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
         <!-- Product Image -->
