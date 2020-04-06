@@ -44,7 +44,7 @@
                                     </div>
 {{--                                    @if(!Auth::check())--}}
                                     <div class="text-center mt-2">
-                                        <button name="loginBtn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                                        <button name="loginBtn" class="btn btn-info text-center">Log in <i class="fas fa-sign-in ml-1"></i></button>
                                     </div>
 {{--                                        @else--}}
 {{--                                        <div class="text-center mt-2">--}}
