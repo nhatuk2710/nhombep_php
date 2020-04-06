@@ -140,7 +140,7 @@
                                                 </div>
                                             @endif
                                             <li class="total">
-                                                <span class="pull-right">Total: ${{number_format($grand_total,2)}}</span>
+{{--                                                <span class="pull-right">Total: ${{number_format($grand_total,2)}}</span>--}}
                                                 <a href="{{url("cart")}}" class="btn btn-sm btn-cart">Cart</a>
                                                 <a href="{{url("checkout")}}" class="btn btn-sm btn-checkout">Checkout</a>
                                             </li>
