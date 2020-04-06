@@ -42,16 +42,16 @@
                                         <input type="password" id="modalLRInput11" name="password" class="form-control form-control-sm validate">
                                         <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
                                     </div>
-                                    @if(!Auth::check())
+{{--                                    @if(!Auth::check())--}}
                                     <div class="text-center mt-2">
                                         <button name="loginBtn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
                                     </div>
-                                        @else
-                                        <div class="text-center mt-2">
-                                            <button name="loginBtn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
-                                            {{Auth::user()->name}}
-                                        </div>
-                                    @endif
+{{--                                        @else--}}
+{{--                                        <div class="text-center mt-2">--}}
+{{--                                            <button name="loginBtn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>--}}
+{{--                                            {{Auth::user()->name}}--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
                                 </div>
                                 <!--Footer-->
                                 <div class="modal-footer">

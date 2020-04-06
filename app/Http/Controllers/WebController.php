@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Mail\OrderCreated;
+//use App\Mail\OrderCreated;
 use App\Order;
 use App\Product;
 use Dotenv\Validator;
@@ -139,25 +139,25 @@ class WebController extends Controller
         return view("checkoutReport");
     }
 
-    public function postLogin(Request $request){
-//        $request->validate([
+//    public function postLogin(Request $request){
+////        $request->validate([
+////            "email"=> 'required\email',
+////            "password"=> 'required\min:8',
+////        ]);
+//        $validator = Validator::make($request->all(),[
 //            "email"=> 'required\email',
 //            "password"=> 'required\min:8',
 //        ]);
-        $validator = Validator::make($request->all(),[
-            "email"=> 'required\email',
-            "password"=> 'required\min:8',
-        ]);
-        if($validator->fails()){
-            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
-        }
-        $email = $request->get("email");
-        $pass = $request->get("password");
-        if(Auth::attempt(['email'=>$email,'password'=>$pass])){
-            return response()->json(['status'=>true,'message'=>"login successfully!!"]);
-        }
-        return response()->json(['status'=>false,'message'=>"login failure"]);
-    }
+//        if($validator->fails()){
+//            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
+//        }
+//        $email = $request->get("email");
+//        $pass = $request->get("password");
+//        if(Auth::attempt(['email'=>$email,'password'=>$pass])){
+//            return response()->json(['status'=>true,'message'=>"login successfully!!"]);
+//        }
+//        return response()->json(['status'=>false,'message'=>"login failure"]);
+//    }
 }
 
 

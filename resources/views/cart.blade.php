@@ -217,11 +217,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php $grand_total = 0; @endphp
                             @forelse($cart as $p)
+                                @php $grand_total+=($p->price*$p->cart_qty) @endphp
                                 <tr>
                                 <td class="cart_product_img d-flex align-items-center col-lg-2">
                                     <img src={{asset("img/product-img/product-1.jpg")}}>
-{{--                                    <p>{{$p->cart_qty}}</p>--}}
                                     <h6>{{$p->product_name}}</h6>
                                 </td>
                                 <td>
@@ -229,14 +230,15 @@
                                         <p class="btn btn-danger text-center text-white">{{$p->cart_qty}}</p>
                                     </div>
                                 </td>
-                                <td class="total_price">
-                                    <span></span>
-                                </td>
-                                    <td class="price"><span></span></td>
+                                    <td class="price"><span>${{$p->price}}</span></td>
+                                    <td class="total_price">
+                                        <span>${{number_format($grand_total,2)}}</span>
+                                    </td>
                                     <td>
                                         <a href="{{url("/remove-cart/{$p->id}")}}">x</a>
                                     </td>
                             </tr>
+
                             @empty
                                 <h6>No product</h6>
                             @endforelse
