@@ -127,7 +127,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget("cart");
-        Mail::to("nhatuknonkey@gmail.com")->send(new OrderCreated());
+//        Mail::to("nhatuknonkey@gmail.com")->send(new OrderCreated());
         return redirect()->to("checkout-success");
     }
 
