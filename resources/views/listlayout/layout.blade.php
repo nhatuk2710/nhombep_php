@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Karl - Fashion Ecommerce Template | Home</title>
+    <title>Karl - Fashion Ecommerce Desgin | Home</title>
 
     <!-- Favicon  -->
 {{--    <link rel="icon" href={{(asset("img/core-img/favicon.ico")}}>--}}
@@ -363,7 +363,7 @@
                                 <h6> Nunc pulvinar molestie sem id blandit.Nunc venenatis interdum mollis.Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
+                                        <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
                                         <p>Michelle Williams</p>
@@ -378,7 +378,7 @@
                                 <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
+                                        <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
                                         <p>Michelle Williams</p>
@@ -393,7 +393,7 @@
                                 <h6>Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. Aliquam finibus nulla quam, a iaculis justo finibus non. Suspendisse in fermentum nunc.Nunc pulvinar molestie sem id blandit. Nunc venenatis interdum mollis. </h6>
                                 <div class="testimonial-info d-flex align-items-center justify-content-center">
                                     <div class="tes-thumbnail">
-                                        <img src={{asset("img/bg-img/tes-1.jpg")}} alt="">
+                                        <img src={{asset("img/bg-img/minh-hang.jpg")}} alt="">
                                     </div>
                                     <div class="testi-data">
                                         <p>Michelle Williams</p>
@@ -422,7 +422,7 @@
                             </div>
                             <div class="copywrite_text d-flex align-items-center">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This web made with my love <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                             </div>
                         </div>
