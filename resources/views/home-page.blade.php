@@ -3,6 +3,7 @@
 @section('product')
 {{--    @if(!Auth::check())--}}
         <!--Modal: Login / Register Form-->
+<form action="{{url("postLogin")}}" method="POST">
         <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog cascading-modal" role="document">
                 <!--Content-->
@@ -108,28 +109,29 @@
                 <!--/.Content-->
             </div>
         </div>
+</form>
         <!--Modal: Login / Register Form-->
-{{--        <script type="text/javascript">--}}
-{{--            $("loginBtn").bind("click",function () {--}}
-{{--               $.ajax({--}}
-{{--                 url: "{{url("postLogin")}}",--}}
-{{--                   method: "POST",--}}
-{{--                   data: {--}}
-{{--                     _token: $("input[name=token]").val(),--}}
-{{--                     _email: $("input[name=email]").val(),--}}
-{{--                     _password: $("input[name=password]").val(),--}}
-{{--                   },--}}
-{{--                   success: function (res) {--}}
-{{--                        if(res.status){--}}
-{{--                            location.reload();--}}
-{{--                        }else{--}}
-{{--                            alert(res.message);--}}
-{{--                        }--}}
-{{--                   }--}}
-{{--               });--}}
-{{--            });--}}
-{{--        </script>--}}
-{{--        @endif--}}
+        <script type="text/javascript">
+            $("loginBtn").bind("click",function () {
+               $.ajax({
+                 url: "{{url("postLogin")}}",
+                   method: "POST",
+                   data: {
+                     _token: $("input[name=token]").val(),
+                     _email: $("input[name=email]").val(),
+                     _password: $("input[name=password]").val(),
+                   },
+                   success: function (res) {
+                        if(res.status){
+                            location.reload();
+                        }else{
+                            alert(res.message);
+                        }
+                   }
+               });
+            });
+        </script>
+        @endif
     @foreach($new as $n)
     <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
         <!-- Product Image -->

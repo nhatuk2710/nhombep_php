@@ -147,7 +147,7 @@
                                         </ul>
                                     </div>
                                     <div class="text-center">
-                                        <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">ogin</a>
+                                        <a href="{{url("/postLogin")}}" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Login</a>
                                     </div>
                                     <div class="header-right-side-menu ml-15">
                                         <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
