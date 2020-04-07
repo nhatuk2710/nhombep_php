@@ -9,5 +9,5 @@ Button Text
 @endcomponent
 
 Thanks,<br>
-{{ config("Nhat anh") }}
+{{ config('app.name') }}
 @endcomponent
