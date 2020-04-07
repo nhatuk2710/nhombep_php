@@ -17,7 +17,7 @@ class OrderCreated extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param Order $order
      */
     public function __construct(Order $order)
     {
@@ -31,6 +31,6 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.ordercreated')->with(['order'=>$this->order]);
+        return $this->markdown('emails.ordercreated')->with(['order'=>$this->order]);
     }
 }

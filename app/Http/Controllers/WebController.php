@@ -118,7 +118,6 @@ class WebController extends Controller
             'payment_method' => $request->get("payment_method"),
             "status" => Order::STATUS_PENDING
         ]);
-
         foreach ($cart as $k){
             DB::table("order_product")->insert([
                 'order_id'=>$order->id,
@@ -128,7 +127,8 @@ class WebController extends Controller
             ]);
         }
         session()->forget("cart");
-        Mail::to("nhatuk9@gmail.com")->send(new OrderCreated($order));
+//        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+        Mail::to('nhatuk9@gmail.com')->send(new OrderCreated($order));
         return redirect()->to("checkout-success");
     }
 
