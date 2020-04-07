@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 //use App\Mail\OrderCreated;
+use App\Mail\OrderCreated;
 use App\Order;
 use App\Product;
 use Dotenv\Validator;
@@ -127,7 +128,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget("cart");
-        Mail::to("nhatukmonkey@gmail.com")->send(new OrderCreated($order));
+        Mail::to("nhatukmonkey@gmail.com")->send(new ordercreated($order));
         return redirect()->to("checkout-success");
     }
 
