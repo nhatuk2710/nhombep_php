@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Mail;
 class WebController extends Controller
 {
     public function home(){
-//        if(is_admin()){
+        if(is_admin()){
 //            die("admin day");
-//        }
+        }
         $new = Product::take(6)->orderBy('created_at','desc')->get();
 
         return view('home-page',['new'=>$new]);
@@ -127,7 +127,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget("cart");
-//        Mail::to("nhatuknonkey@gmail.com")->send(new OrderCreated());
+        Mail::to("nhatukmonkey@gmail.com")->send(new OrderCreated($order));
         return redirect()->to("checkout-success");
     }
 

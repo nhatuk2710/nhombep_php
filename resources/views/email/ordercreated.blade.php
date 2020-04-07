@@ -1,12 +1,13 @@
-{{--@component('mail::message')--}}
-{{--# Introduction--}}
+@component('mail::message')
+# Introduction
 
-{{--The body of your message.--}}
+Total of bill : {{$order->grand_total}}
+Anh yeu em rat nhieu
 
-{{--@component('mail::button', ['url' => ''])--}}
-{{--Button Text--}}
-{{--@endcomponent--}}
+@component('mail::button', ['url' => ''])
+Button Text
+@endcomponent
 
-{{--Thanks,<br>--}}
-{{--{{ config('app.name') }}--}}
-{{--@endcomponent--}}
+Thanks,<br>
+{{ config("Nhat anh") }}
+@endcomponent
