@@ -102,7 +102,6 @@ class WebController extends Controller
             'shipping_add'=>'required',
             'telephone'=>'required',
             'payment_method'=>'required |string',
-//            'grand_total'=>'required|int',
         ]);
         $cart = $request->session()->get("cart");
         $grand_total = 0;
