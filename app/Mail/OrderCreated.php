@@ -31,6 +31,6 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.ordercreated')->with(['order'=>$this->order]);
+        return $this->markdown('email.OderCreated')->with(['order'=>$this->order]);
     }
 }
