@@ -131,7 +131,7 @@
                                                     </div>
                                                     <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
                                                 </li>
-                                                @php $grand_total+=($r->price*$r->cart_qty) @endphp
+{{--                                                @php $grand_total+=($r->price*$r->cart_qty) @endphp--}}
                                             @endforeach
                                         @else
                                             <h3>No product</h3>

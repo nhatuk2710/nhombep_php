@@ -221,10 +221,10 @@
                             @forelse($cart as $p)
                                 @php $grand_total+=($p->price*$p->cart_qty) @endphp
                                 <tr>
-                                <td class="cart_product_img d-flex align-items-center col-lg-2">
-                                    <img src={{asset("img/product-img/1.jpg")}}>
-                                    <h6>{{$p->product_name}}</h6>
+                                <td class="cart_product_img d-flex align-items-center col-lg-3">
+                                    <img src={{asset($p->thumbnail)}}>
                                 </td>
+                                    <td class="d-flex align-items pull-left"><h6>{{$p->product_name}}</h6></td>
                                 <td>
                                     <div class="quantity">
                                         <p class="btn btn-danger text-center text-white">{{$p->cart_qty}}</p>
@@ -248,7 +248,7 @@
 
                     <div class="cart-footer d-flex mt-30">
                         <div class="back-to-shop w-50">
-                            <a href="shop-grid-left-sidebar.html">Continue shooping</a>
+                            <a href="{{url("/")}}">Continue shooping</a>
                         </div>
                         <div class="update-checkout w-50 text-right">
                             <a href="{{url("/clear-cart")}}">clear cart</a>

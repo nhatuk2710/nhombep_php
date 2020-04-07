@@ -153,7 +153,7 @@
                 <div class="single_gallery_item">
                     <!-- Product Image -->
                     <div class="product-img">
-                        <img src={{asset("img/product-img/1.jpg")}} alt="">
+                        <img src={{asset("$c->thumbnail")}} alt="">
                         <div class="product-quicview">
                             <a href="#" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
                         </div>
