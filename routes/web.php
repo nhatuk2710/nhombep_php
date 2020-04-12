@@ -36,8 +36,8 @@ Route::get("checkout",'WebController@checkout')->middleware("auth");
 Route::post("checkout",'WebController@placeOrder')->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
 Route::get('checkoutReport','WebController@checkoutReport');
-//login
-Route::post("postLogin","WebController@postLogin");
+//login popup
+
 
 Auth::routes();
 
@@ -46,12 +46,6 @@ Route::get('/logout',function (){
     return redirect()->to("/login");
 });
 
-//Auth::routes();
-//
-//Route::get('/login', 'HomeController@index')->name('login');
-
-//Auth::routes();
-//
-//Route::get('/register',function (){
-//   return view('Register');
-//});
+Route::post("postLogin","WebController@postLogin");
+Route::post("postSignup","WebController@postSignup");
+Route::get("logOut",'WebController@logOut');

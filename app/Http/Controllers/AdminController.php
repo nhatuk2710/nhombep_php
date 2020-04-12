@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Brand;
@@ -16,7 +17,8 @@ class AdminController extends Controller
         $categories = Category::all();
         $brands= Brand::all();
         $products= Product::all();
-        return view('admin.category.index',['categories'=>$categories,'brands'=>$brands,'products'=>$products]);
+        $users= User::all();
+        return view('admin.category.index',['categories'=>$categories,'brands'=>$brands,'products'=>$products,'users'=>$users]);
     }
 
 
@@ -61,6 +63,40 @@ class AdminController extends Controller
         return redirect()->to("admin/category");
     }
 
+//info user
+    public function userCreate(){
+        return view('admin.category.userCreate');
+    }
+
+    public function userCreatePost(Request $request){
+        $request->validate([
+            "email"=>"required|string|unique:users",
+            "password"=>"required|string",
+            "name"=>"required|string",
+            "role"=>"required|int",
+        ]);
+        try{
+           $avt = null;
+            if($request->hasFile("avt")){
+                $files = $request->file("avt");
+                $files_name = $files->getClientOriginalName();
+                $exts = $files->getClientOriginalExtension();
+                $files->move("upload",$files_name);
+                $avt = "upload/".$files_name;
+            }
+            User::create([
+                "email"=>$request->get("email"),
+                "name"=>$request->get("name"),
+                "password"=>$request->get("password"),
+                "role"=>$request->get("role"),
+                "avt"=>$avt,
+            ]);
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("admin/category");
+    }
+
 //  info product
     public function products(){
         return view('admin.category.productcreate');
@@ -79,6 +115,14 @@ class AdminController extends Controller
 
         ]);
         try{
+            $image = null;
+            if($request->hasFile("image")){
+                $file = $request->file("image");
+                $file_name = $file->getClientOriginalName();
+                $ext = $file->getClientOriginalExtension();
+                $file->move("upload",$file_name);
+                $image = "upload/".$file_name;
+            }
             Product::create([
                 "product_name"=>$request->get("product_name"),
                 "product_desc"=>$request->get("product_desc"),
@@ -86,6 +130,7 @@ class AdminController extends Controller
                 "gallery"=>$request->get("gallery"),
                 "price"=>$request->get("price"),
                 "quantity"=>$request->get("quantity"),
+                "image"=>$image,
                 "brand_id"=>$request->get("brand_id"),
                 "category_id"=>$request->get("category_id"),
 
@@ -138,6 +183,44 @@ class AdminController extends Controller
         return redirect()->to("admin/category");
     }
 
+    public function edituser($id){
+        $user = User::find($id);
+        return view("admin.category.edituser",['user'=>$user]);
+    }
+
+    public function editUserPost($id, Request $request){
+        $user = User::find($id);
+        $request->validate([
+            "email"=>"string:user,email,".$id,
+            "name"=>"string:user,name,".$id,
+            "password"=>"string:user,password,".$id,
+            "role"=>"int:user,role,".$id,
+//            "avt"=>"string:user,avt,".$id,
+            "remember_token"=>"string:user,remember_token,".$id,
+        ]);
+        try{
+            $avt = null;
+            if($request->hasFile("avt")) {
+                $files = $request->file("avt");
+                $files_name = $files->getClientOriginalName();
+                $exts = $files->getClientOriginalExtension();
+                $files->move("upload", $files_name);
+                $avt = "upload/" . $files_name;
+            }
+            $user->update([
+            "email"=>$request->get("email"),
+                "name"=>$request->get("name"),
+                "password"=>$request->get("password"),
+                "role"=>$request->get("role"),
+                "avt"=>$avt,
+                "remember_token"=>$request->get("remember_token"),
+            ]);
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("/admin/category");
+    }
+
     public function productEdit($id){
         $product = Product::find($id);
         return view('admin.category.productEdit',['product'=>$product]);
@@ -156,6 +239,14 @@ class AdminController extends Controller
             "category_id"=>"int:product,category_id,".$id,
         ]);
         try{
+            $image = null;
+            if($request->hasFile("image")){
+                $file = $request->file("image");
+                $file_name = $file->getClientOriginalName();
+                $ext = $file->getClientOriginalExtension();
+                $file->move("upload",$file_name);
+                $image = "upload/".$file_name;
+            }
             $product->update([
                 "product_name"=>$request->get("product_name"),
                 "product_desc"=>$request->get("product_desc"),
@@ -165,6 +256,7 @@ class AdminController extends Controller
                 "quantity"=>$request->get("quantity"),
                 "brand_id"=>$request->get("brand_id"),
                 "category_id"=>$request->get("category_id"),
+                "image"=>$image,
 
             ]);
         }catch (\Exception $e){

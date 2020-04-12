@@ -426,8 +426,8 @@ img {
     line-height: 60px;
     font-size: 24px;
     background-color: #3a3a3a;
-    color: #fff;
     border-radius: 50%;
+    color: #fff;
 }
 
 .header-right-side-menu > a:focus,
@@ -1630,6 +1630,17 @@ img {
     margin-bottom: 100px;
 }
 
+.img-o . img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    overflow: hidden;
+}
 .single_product_thumb .carousel-indicators {
     bottom: -86px;
     -webkit-box-pack: left;

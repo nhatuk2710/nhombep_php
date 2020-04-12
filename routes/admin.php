@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('category/',"AdminController@admin");
 
 
+//upload
+Route::get('category/userCreate',"AdminController@userCreate");
+Route::post('category/userCreatePost',"AdminController@userCreatePost");
+//edit users
+Route::get('category/edituser/{id}','AdminController@edituser');
+Route::post('category/editUserPost/{id}','AdminController@editUserPost');
 //luu danh muc san pham
 Route::get('category/created',"AdminController@categoryCreate");
 Route::post('category/store',"AdminController@categoryStore");

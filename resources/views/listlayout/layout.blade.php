@@ -10,13 +10,21 @@
 
     <!-- Title  -->
     <title>Karl - Fashion Ecommerce Desgin | Home</title>
-
+    <script src={{asset("js/jquery/jquery-2.2.4.min.js")}}></script>
     <!-- Favicon  -->
 {{--    <link rel="icon" href={{(asset("img/core-img/favicon.ico")}}>--}}
+{{--    <link href="{{asset("https://bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css")}}" rel="stylesheet" id="bootstrap-css">--}}
+{{--    <script src={{asset("https://bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js")}}></script>--}}
 
-<!-- Core Style CSS -->
+    <link rel="stylesheet" href={{asset("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")}}>
+
+{{--    <link rel="stylesheet" href={{asset("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")}} integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--}}
+{{--    <script src={{asset("https://code.jquery.com/jquery-3.2.1.slim.min.js")}} integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>--}}
+{{--    <script src={{asset("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")}} integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>--}}
+{{--    <script src={{asset("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")}} integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>--}}
+    <!-- Core Style CSS -->
     <link rel="stylesheet" href={{asset("css/core-style.css")}}>
-    <link rel="stylesheet" href={{asset("style.css")}}>
+{{--    <link rel="stylesheet" href={{asset("style.css")}}>--}}
 
     <!-- Responsive CSS -->
     <link href={{asset("css/responsive.css")}} rel="stylesheet">
@@ -114,9 +122,9 @@
                                     <div class="cart">
                                         @php $cart = session("cart")  @endphp
                                             @if(isset($cart))
-                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{count($cart)}}</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                        <a href="#" id="header-cart-btn-x" target="_blank"><span class="cart_quantity">{{count($cart)}}</span> <i class="ti-bag"></i>Bag</a>
                                         @else
-                                            <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">0</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                            <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">0</span> <i class="ti-bag"></i>Bag</a>
                                         @endif
                                             <!-- Cart List Area Start -->
                                         <ul class="cart-list">
@@ -146,11 +154,54 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="text-center">
-                                        <a href="{{url("/postLogin")}}" class="btn btn-default btn-rounded my-3 text-center" data-toggle="modal" data-target="#modalLRForm">Login</a>
-                                    </div>
-                                    <div class="header-right-side-menu ml-15">
-                                        <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
+{{--                                    <div class="text-center">--}}
+{{--                                        <!-- Button HTML (to Trigger Modal) -->--}}
+{{--                                        <div class="text-center">--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+                                    <div class="text-center ml-15">
+{{--                                        @php $roless = Auth::user()->role @endphp--}}
+                                    @if(!Auth::check())
+                                        <button class="btn btn-danger btn-xl " href="#" data-toggle="modal"
+                                                data-target=".bs-modal-sm">Sign Up</button>
+                                    @elseif($roles === 1)
+                                            <div class="header-right-side-menu testimonial-info align-items-center ml-15">
+                                                <div class="">
+                                                    <a><img class="rounded-circle ml-15" width="70" href="#" src="{{asset(Auth::user()->avt)}}" alt="avt" type="string">
+                                                        <ul class="nav-item dropdow ">
+                                                            <a class="nav-link active dropdown-toggle row" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                                                               aria-expanded="false">{{Auth::user()->name}}</a>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="{{url("cart")}}">Yours cart</a>
+                                                                <a class="dropdown-item" href="{{url("checkout")}}">Yours checkout</a>
+                                                                <a class="dropdown-item" href="#">Information</a>
+                                                                <a class="dropdown-item" href="{{url("admin/category/")}}">Admin</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="{{url("logOut")}}">Log out</a>
+                                                            </div>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        @else
+
+                                            <div class="header-right-side-menu testimonial-info align-items-center ml-15">
+                                                <div class="">
+                                                    <a><img class="rounded-circle ml-15" width="70" href="#" src="{{asset(Auth::user()->avt)}}" alt="avt" type="string">
+                                                        <ul class="nav-item dropdow row">
+                                                            <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="{{url("cart")}}">Yours cart</a>
+                                                                <a class="dropdown-item" href="{{url("checkout")}}">Yours checkout</a>
+                                                                <a class="dropdown-item" href="#">Information</a>
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="{{url("logOut")}}">Log out</a>
+                                                            </div>
+                                                        </ul>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                    @endif
                                     </div>
                                 </div>
                             </div>
@@ -485,7 +536,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- /.wrapper end -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src={{asset("js/jquery/jquery-2.2.4.min.js")}}></script>
+
+{{--    <script src="{{asset("https://code.jquery.com/jquery-3.4.1.min.js")}}"></script>--}}
     <!-- Popper js -->
     <script src={{asset("js/popper.min.js")}}></script>
     <!-- Bootstrap js -->
@@ -494,6 +546,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src={{asset("js/plugins.js")}}></script>
     <!-- Active js -->
     <script src={{asset("js/active.js")}}></script>
+{{--    <script src={{asset("https://code.jquery.com/jquery-3.4.1.js")}} ></script>--}}
+
 
 </body>
 

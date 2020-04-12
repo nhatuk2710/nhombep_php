@@ -12,7 +12,7 @@
                         <a href="{{url('admin/category/')}}">Dashboard</a>
                     </ol>
                 </div>
-                <form action="{{url("admin/category/productstore")}}" method="post">
+                <form action="{{url("admin/category/productstore")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group has-success">
                         <label for="tt-name" class="control-label"><p>list product</p></label>
@@ -34,6 +34,9 @@
                         <p>product gallery</p>
                         <input id="tt-name" name="gallery" type="text" value="{{old("gallery")}}"
                                class="form-control tt-name @if($errors->has("gallery"))is-invalid @endif">
+                        <p>product image</p>
+                        <input id="tt-name" name="image" type="file" value="{{old("image")}}"
+                               class="form-control tt-name @if($errors->has("image"))is-invalid @endif">
                         <p>Brand ID</p>
                         <input id="tt-name" name="brand_id" type="text" value="{{old("brand_id")}}"
                                class="form-control tt-name @if($errors->has("brand_id"))is-invalid @endif">
@@ -42,7 +45,7 @@
                                class="form-control tt-name @if($errors->has("category_id"))is-invalid @endif">
                         <span class="help-block field-validation-valid"></span>
                         @if($errors->has("product_name") ||("product_desc") ||("thumbnail") ||("gallery") ||("price")
-                                            ||("quantity") ||("brand_id") ||("category_id"))
+                                            ||("quantity") ||("brand_id") ||("category_id") ||("image"))
                             <p style="color:red">{{$errors->first("product_name")}}</p>
                             <p style="color:red">{{$errors->first("product_desc")}}</p>
                             <p style="color:red">{{$errors->first("thumbnail")}}</p>
@@ -51,8 +54,7 @@
                             <p style="color:red">{{$errors->first("quantity")}}</p>
                             <p style="color:red">{{$errors->first("brand_id")}}</p>
                             <p style="color:red">{{$errors->first("category_id")}}</p>
-
-
+                            <p style="color:red">{{$errors->first("image")}}</p>
                         @endif
                     </div>
                     <div>

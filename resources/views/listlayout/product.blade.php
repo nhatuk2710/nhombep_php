@@ -16,7 +16,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href={{asset("css/core-style.css")}}>
-    <link rel="stylesheet" href={{asset("style.css")}}>
+{{--    <link rel="stylesheet" href={{asset("style.css")}}>--}}
 
     <!-- Responsive CSS -->
     <link href={{asset("css/responsive.css")}} rel="stylesheet">
@@ -114,9 +114,9 @@
                                 <div class="cart">
                                     @php $cart = session("cart")  @endphp
                                     @if(isset($cart))
-                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{count($cart)}}</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{count($cart)}}</span> <i class="ti-bag"></i>Bag</a>
                                     @else
-                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">0</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">0</span> <i class="ti-bag"></i>Bag</a>
                                 @endif
                                 <!-- Cart List Area Start -->
                                     <ul class="cart-list">
@@ -144,8 +144,28 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="header-right-side-menu ml-15">
-                                    <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
+                                <div class="text-center">
+                                    @if(!Auth::check())
+                                        <button class="btn btn-danger btn-xl " href="#signin" data-toggle="modal"
+                                                data-target=".bs-modal-sm">Login</button>
+                                    @else
+                                        <div class="header-right-side-menu testimonial-info align-items-center ml-15">
+                                            <div class="">
+                                                <a><img class="rounded-circle ml-15" width="70" href="#" src="{{asset(Auth::user()->avt)}}" alt="avt" type="string">
+                                                    <ul class="nav-item dropdow row">
+                                                        <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="{{url("cart")}}">Yours cart</a>
+                                                            <a class="dropdown-item" href="{{url("checkout")}}">Yours checkout</a>
+                                                            <a class="dropdown-item" href="#">Information</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="{{url("logOut")}}">Log out</a>
+                                                        </div>
+                                                    </ul>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

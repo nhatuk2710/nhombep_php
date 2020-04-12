@@ -59,10 +59,8 @@
             </li>
         </ul>
     </div>
-
     @endsection
 @section('listproduct')
-
     <div class="shop_grid_product_area">
         <div class="row">
             <!-- Single gallery Item -->
@@ -84,12 +82,9 @@
                 </div>
             </div>
             @endforeach
-
             <!-- Single gallery Item -->
-
         </div>
     </div>
-
     <div class="shop_pagination_area wow fadeInUp" data-wow-delay="1.1s">
         <nav aria-label="Page navigation">
             <ul class="pagination pagination-sm">
@@ -99,6 +94,5 @@
             </ul>
         </nav>
     </div>
-
     @endsection
 

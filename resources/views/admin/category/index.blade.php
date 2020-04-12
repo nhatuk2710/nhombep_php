@@ -112,13 +112,13 @@
         <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="white-box">
                 <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
-{{--                    <select class="form-control pull-right row b-none">--}}
-{{--                        <option>March 2017</option>--}}
-{{--                        <option>April 2017</option>--}}
-{{--                        <option>May 2017</option>--}}
-{{--                        <option>June 2017</option>--}}
-{{--                        <option>July 2017</option>--}}
-{{--                    </select>--}}
+                    {{--                    <select class="form-control pull-right row b-none">--}}
+                    {{--                        <option>March 2017</option>--}}
+                    {{--                        <option>April 2017</option>--}}
+                    {{--                        <option>May 2017</option>--}}
+                    {{--                        <option>June 2017</option>--}}
+                    {{--                        <option>July 2017</option>--}}
+                    {{--                    </select>--}}
                     <a href="{{url("/admin/category/productcreate")}}" class="btn btn-danger btn-xl pulse-loader">Add +</a>
                     <a href="{{url("/admin/category/cateDestroy")}}" class="btn btn-danger btn-xl pull-right">Delete all</a>
                 </div>
@@ -129,6 +129,7 @@
                         <tr>
                             <th>ID</th>
                             <th>NAME</th>
+                            <th>IMAGE</th>
                             <th>DESC</th>
                             <th>PRICE</th>
                             <th>QUANTITY</th>
@@ -145,6 +146,7 @@
                             <tr>
                                 <td>{{$t->id}}</td>
                                 <td class="txt-ofo">{{$t->product_name}}</td>
+                                <td class="txt-ofo"><img src="{{asset($t->image)}}" class="img-responsive"></td>
                                 <td class="txt-ofo">{{$t->product_desc}}</td>
                                 <td class="txt-ofo">{{$t->price}}</td>
                                 <td class="txt-ofo">{{$t->quantity}}</td>
@@ -156,14 +158,81 @@
                                 <td>{{$t->updated_at}}</td>
                                 <td>
                                     <div class="icon-arrows-button-on">
-{{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">--}}
+                                        {{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">--}}
                                         <a href="{{url("/admin/category/productEdit",['id'=>$t->id])}}"
                                            class="btn btn-danger btn-xs pull-right col-lg-12 col-xs-12 col-md-12" title="Edit">Edit</a>
-{{--                                        </button>--}}
-{{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">--}}
+                                        {{--                                        </button>--}}
+                                        {{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">--}}
                                         <a href="{{url("/admin/category/productDeleteUp",['id'=>$t->id])}}"
                                            class="btn btn-primary btn-xs pull-right col-lg-12 col-xs-12 col-md-12" tile="Delete">Delete</a>
-{{--                                        </button>--}}
+                                        {{--                                        </button>--}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="spacer"></tr>
+                        @empty
+                            <p>No Products</p>
+                        @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="white-box">
+                <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
+                    {{--                    <select class="form-control pull-right row b-none">--}}
+                    {{--                        <option>March 2017</option>--}}
+                    {{--                        <option>April 2017</option>--}}
+                    {{--                        <option>May 2017</option>--}}
+                    {{--                        <option>June 2017</option>--}}
+                    {{--                        <option>July 2017</option>--}}
+                    {{--                    </select>--}}
+{{--                    <a href="{{url("/admin/category/userCreate")}}" class="btn btn-danger btn-xl pulse-loader">Add +</a>--}}
+                    <a href="{{url("/admin/category/cateDestroy")}}" class="btn btn-danger btn-xl pull-right">Delete all</a>
+                </div>
+                <h3 class="box-title">List Users</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>Email</th>
+                            <th>AVATAR</th>
+                            <th>PASS</th>
+                            <th>EMAIL_VERIFIED</th>
+                            <th>ROLE</th>
+                            <th>REMEMBER</th>
+                            <th>CREATE</th>
+                            <th>UPDATE</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @forelse($users as $u)
+                            <tr>
+                                <td>{{$u->id}}</td>
+                                <td>{{$u->name}}</td>
+                                <td class="txt-ofo">{{$u->email}}</td>
+                                <td class="txt-ofo"><img src="{{asset($u->avt)}}" class="img-responsive"></td>
+                                <td class="txt-ofo">{{$u->password}}</td>
+                                <td class="txt-ofo">{{$u->email_verified_at}}</td>
+                                <td class="txt-ofo">{{$u->role}}</td>
+                                <td class="txt-ofo">{{$u->remember_token}}</td>
+                                <td>{{$u->created_at}}</td>
+                                <td>{{$u->updated_at}}</td>
+                                <td>
+                                    <div class="icon-arrows-button-on">
+                                        {{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">--}}
+                                        <a href="{{url("/admin/category/edituser",['id'=>$u->id])}}"
+                                           class="btn btn-danger btn-xs pull-right col-lg-12 col-xs-12 col-md-12" title="Edit">Edit</a>
+                                        {{--                                        </button>--}}
+                                        {{--                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">--}}
+                                        <a href="{{url("/admin/category/productDeleteUp",['id'=>$u->id])}}"
+                                           class="btn btn-primary btn-xs pull-right col-lg-12 col-xs-12 col-md-12" tile="Delete">Delete</a>
+                                        {{--                                        </button>--}}
                                     </div>
                                 </td>
                             </tr>

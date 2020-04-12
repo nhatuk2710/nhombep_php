@@ -4,24 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Category;
 //use App\Mail\OrderCreated;
+use App\Http\Middleware\CheckAdmin;
 use App\Mail\OrderCreated;
 use App\Order;
 use App\Product;
-use Dotenv\Validator;
+
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
+//use function MongoDB\BSON\toJSON;
+
 
 class WebController extends Controller
 {
-    public function home(){
-        if(is_admin()){
-//            die("admin day");
-        }
-        $new = Product::take(6)->orderBy('created_at','desc')->get();
+    public function home(Request $request){
+//        if(is_admin()){
+////            die("admin day");
+//        }
+        $roles = User::all()->where('user');
 
-        return view('home-page',['new'=>$new]);
+        $new = Product::take(6)->orderBy('created_at','desc')->get();
+        return view('home-page',['new'=>$new,'roles'=>$roles]);
     }
 
     public function list($id){
@@ -73,7 +79,7 @@ class WebController extends Controller
     public function clearCart(Request $request){
         $request->session()->forget("cart");
 //        $request->session()->forget(['asd','asd']);
-//        $request->session()->flush();
+
         return redirect()->to("/cart");
     }
 
@@ -133,31 +139,56 @@ class WebController extends Controller
 
     public function checkoutSuccess(){
         return view("checkout-success");
-}
+    }
 
     public function checkoutReport(){
         return view("checkoutReport");
     }
 
-//    public function postLogin(Request $request){
-////        $request->validate([
-////            "email"=> 'required\email',
-////            "password"=> 'required\min:8',
-////        ]);
-//        $validator = Validator::make($request->all(),[
-//            "email"=> 'required\email',
-//            "password"=> 'required\min:8',
-//        ]);
-//        if($validator->fails()){
-//            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
-//        }
-//        $email = $request->get("email");
-//        $pass = $request->get("password");
-//        if(Auth::attempt(['email'=>$email,'password'=>$pass])){
-//            return response()->json(['status'=>true,'message'=>"login successfully!!"]);
-//        }
-//        return response()->json(['status'=>false,'message'=>"login failure"]);
-//    }
+  public function postLogin(Request $request){
+       $validator = Validator::make($request->all(),[
+            "email"=> "required | email",
+            "password"=> "required | min:8",
+        ]);
+
+        if($validator->fails()){
+            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
+        }
+        $email = $request->get("email");
+        $pass = $request->get("password");
+        if(Auth::attempt(['email'=>$email,'password'=>$pass])){
+            return response()->json(['status'=>true,'message'=>"login successfully!!"]);
+        }
+        return response()->json(['status'=>false,'message'=>"login failure"]);
+    }
+
+    public function postSignup(Request $request){
+        $validator = Validator::make($request->all(),[
+            "email"=> "required|email|string| unique:users",
+            "name"=> "required |string| max:255",
+            "password"=> "required |confirmed |min:8",
+        ]);
+
+        if($validator->fails()){
+            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
+        }
+        $email = $request->get("email");
+        $pass = $request->get("password");
+        $name = $request->get("name");
+//        $confirms = $request->get("password_confirmation");
+//        dd($request);
+        if(Auth::attempt(['email'=>$email,'password'=>$pass,'name'=>$name])){
+            return response()->json(['status'=>true,'message'=>"Sign Up successfully!!"]);
+        }
+        return response()->json(['status'=>false,'message'=>"Sign Up failure"]);
+    }
+
+    public function logOut(Request $request){
+        $request->session()->flush();
+        return redirect()->to("/");
+    }
+
+
 }
 
 

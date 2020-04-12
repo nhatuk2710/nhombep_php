@@ -1,137 +1,172 @@
 @extends('listlayout.layout')
 {{--@includeIf('css-script.head')--}}
 @section('product')
-{{--    @if(!Auth::check())--}}
-        <!--Modal: Login / Register Form-->
-{{--<form action="{{url("postLogin")}}" method="POST">--}}
-{{--        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--}}
-{{--            <div class="modal-dialog cascading-modal" role="document">--}}
-{{--                <!--Content-->--}}
-{{--                <div class="modal-content">--}}
 
-{{--                    <!--Modal cascading tabs-->--}}
-{{--                    <div class="modal-c-tabs">--}}
 
-{{--                        <!-- Nav tabs -->--}}
-{{--                        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>--}}
-{{--                                    Login</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>--}}
-{{--                                    Register</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
+<!-- Modal HTML -->
+<!--Modal: Login / Register Form-->
 
-{{--                        <!-- Tab panels -->--}}
-{{--                        <div class="tab-content">--}}
-{{--                            <!--Panel 7-->--}}
-{{--                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">--}}
 
-{{--                                <!--Body-->--}}
-{{--                                <div class="modal-body mb-1">--}}
-{{--                                    <div class="md-form form-sm mb-5">--}}
-{{--                                        <i class="fas fa-envelope prefix"></i>--}}
-{{--                                        <input type="email" id="modalLRInput10" name="email" class="form-control form-control-sm validate">--}}
-{{--                                        <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>--}}
-{{--                                    </div>--}}
+<style>
+    .prettyline {
+        height: 5px;
+        border-top: 0;
+        /*background: #c4e17f;*/
+        border-radius: 15px;
+    }
+    .modal-content {
+        font-size: medium;
+    }
+    .form-control {
+        font-size: medium;
+    }
 
-{{--                                    <div class="md-form form-sm mb-4">--}}
-{{--                                        <i class="fas fa-lock prefix"></i>--}}
-{{--                                        <input type="password" id="modalLRInput11" name="password" class="form-control form-control-sm validate">--}}
-{{--                                        <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>--}}
-{{--                                    </div>--}}
-{{--                                    @if(!Auth::check())--}}
-{{--                                    <div class="text-center mt-2">--}}
-{{--                                        <button name="loginBtn" class="btn btn-info text-center">Log in <i class="fas fa-sign-in ml-1"></i></button>--}}
-{{--                                    </div>--}}
-{{--                                        @else--}}
-{{--                                        <div class="text-center mt-2">--}}
-{{--                                            <button name="loginBtn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>--}}
-{{--                                            {{Auth::user()->name}}--}}
-{{--                                        </div>--}}
-{{--                                    @endif--}}
-{{--                                </div>--}}
-{{--                                <!--Footer-->--}}
-{{--                                <div class="modal-footer">--}}
-{{--                                    <div class="options text-center text-md-right mt-1">--}}
-{{--                                        <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>--}}
-{{--                                        <p>Forgot <a href="#" class="blue-text">Password?</a></p>--}}
-{{--                                    </div>--}}
-{{--                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>--}}
-{{--                                </div>--}}
+    .btn-danger {
+        font-size: medium;
+    }
+</style>
 
-{{--                            </div>--}}
-{{--                            <!--/.Panel 7-->--}}
+<!-- Modal -->
 
-{{--                            <!--Panel 8-->--}}
-{{--                            <div class="tab-pane fade" id="panel8" role="tabpanel">--}}
-
-{{--                                <!--Body-->--}}
-{{--                                <div class="modal-body">--}}
-{{--                                    <div class="md-form form-sm mb-5">--}}
-{{--                                        <i class="fas fa-envelope prefix"></i>--}}
-{{--                                        <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">--}}
-{{--                                        <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="md-form form-sm mb-5">--}}
-{{--                                        <i class="fas fa-lock prefix"></i>--}}
-{{--                                        <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">--}}
-{{--                                        <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="md-form form-sm mb-4">--}}
-{{--                                        <i class="fas fa-lock prefix"></i>--}}
-{{--                                        <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">--}}
-{{--                                        <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="text-center form-sm mt-2">--}}
-{{--                                        <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                                <!--Footer-->--}}
-{{--                                <div class="modal-footer">--}}
-{{--                                    <div class="options text-right">--}}
-{{--                                        <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>--}}
-{{--                                    </div>--}}
-{{--                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!--/.Panel 8-->--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!--/.Content-->--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--</form>--}}
-        <!--Modal: Login / Register Form-->
-{{--        <script type="text/javascript">--}}
-{{--            $("loginBtn").bind("click",function () {--}}
-{{--               $.ajax({--}}
-{{--                 url: "{{url("postLogin")}}",--}}
-{{--                   method: "POST",--}}
-{{--                   data: {--}}
-{{--                     _token: $("input[name=token]").val(),--}}
-{{--                     _email: $("input[name=email]").val(),--}}
-{{--                     _password: $("input[name=password]").val(),--}}
-{{--                   },--}}
-{{--                   success: function (res) {--}}
-{{--                        if(res.status){--}}
-{{--                            location.reload();--}}
-{{--                        }else{--}}
-{{--                            alert(res.message);--}}
-{{--                        }--}}
-{{--                   }--}}
-{{--               });--}}
-{{--            });--}}
-{{--        </script>--}}
-{{--        @endif--}}
+<ul class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <br>
+            <div class="bs-example bs-example-tabs">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#signin" id="signin-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Sign-In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signup" id="signup-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Sign-Up</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content" id="myTabContent">
+                    @if(!Auth::check())
+                        <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="home-tab">
+                        <form action="#" method="post" >
+                            @csrf
+                            <fieldset>
+                                <!-- Sign In Form -->
+                                <div class="control-group">
+                                    <label class="control-label" for="user">User email:</label>
+                                    <div class="controls">
+                                        <input id="user" name="email" type="text" class="form-control" placeholder="" required value="{{old("email")}}">
+                                    </div>
+                                </div>
+                                <!-- Password input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="passwordinput">Password:</label>
+                                    <div class="controls">
+                                        <input required="" id="passwordinput" name="password" class="form-control" type="password" placeholder="">
+                                    </div>
+                                </div>
+                                <!-- Button -->
+                                <div class="control-group">
+                                    <label class="control-label" for="loginButton"></label>
+                                    <div class="controls">
+                                        <button type="button" id="loginButton" name="Button" class="btn btn-danger">Sign In</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        </div>
+                        <script type="text/javascript">
+                            $("#loginButton").bind("click",function () {
+                                $.ajax({
+                                    url: "{{url("postLogin")}}",
+                                    method: "POST",
+                                    data: {
+                                        _token: $("input[name=_token]").val(),
+                                        email: $("input[name=email]").val(),
+                                        password: $("input[name=password]").val(),
+                                    },
+                                    success: function (res) {
+                                        if(res.status){
+                                            location.reload();
+                                        }else{
+                                            alert(res.message);
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                    <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="profile-tab">
+                        <form action="#" method="post" class="form-horizontal">
+                            <fieldset>
+                                <div class="control-group">
+                                    <label class="control-label" for="name">User name:</label>
+                                    <div class="controls">
+                                        <input id="name" name="name" class="form-control" type="text" placeholder="Full Name" required="">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="Email">Email:</label>
+                                    <div class="controls">
+                                        <input id="Email" name="email" class="form-control" type="text" placeholder="example@gmail.com" required>
+                                    </div>
+                                </div>
+                                <!-- Password input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="password">Password:</label>
+                                    <div class="controls">
+                                        <input id="password" name="password" class="form-control" type="password" placeholder="1-8 Characters"  required>
+                                    </div>
+                                </div>
+                                <!-- Confirm Password input-->
+                                <div class="control-group">
+                                    <label class="control-label" for="password-confirm">Confirm Password:</label>
+                                    <div class="controls">
+                                        <input id="password-confirm" name="password_confirmation"  class="form-control" type="password" placeholder="1-8 Characters"  required>
+                                    </div>
+                                </div>
+                                <!-- Multiple Radios (inline) -->
+                                <!-- Button -->
+                                <div class="control-group">
+                                    <label class="control-label" for="confirmsignup"></label>
+                                    <div class="controls">
+                                        <button type="button" id="confirmsignup"  class="btn btn-danger">Sign Up</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $("#confirmsignup").bind("click",function () {
+                    $.ajax({
+                        url: "{{url("postSignup")}}",
+                        method: "POST",
+                        data: {
+                            _token: $("input[name=_token]").val(),
+                            name: $("input[name=name]").val(),
+                            email: $("input[name=email]").val(),
+                            password: $("input[name=password]").val(),
+                            password_confirmation: $("input[name=password_confirmation]").val(),
+                        },
+                        success: function (res) {
+                            if(res.status){
+                                location.reload();
+                            }else{
+                                alert(res.message);
+                            }
+                        }
+                    });
+                });
+            </script>
+            @endif
+            <div class="modal-footer">
+                <center>
+                    <button id="#" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</ul>
     @foreach($new as $n)
     <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
         <!-- Product Image -->

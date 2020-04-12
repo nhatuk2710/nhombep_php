@@ -221,7 +221,6 @@
                         </div>
                         <button type="submit" href="{{url("/checkout-success")}}" class="btn karl-checkout-btn">Place Order</button>
 
-
                     </div>
 
                 </div>
