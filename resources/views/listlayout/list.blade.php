@@ -72,8 +72,9 @@
                                     </div>
                                     <div class="text-center">
                                         @if(!Auth::check())
-                                            <button class="btn btn-danger btn-xl " href="#signin" data-toggle="modal"
-                                                    data-target=".bs-modal-sm">Login</button>
+                                            <div class="header-right-side-menu ml-15">
+                                                <a href="#" ><i class="ti-menu" aria-hidden="true"></i></a>
+                                            </div>
                                         @else
                                             <div class="header-right-side-menu testimonial-info align-items-center ml-15">
                                                 <div class="">

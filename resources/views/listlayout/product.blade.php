@@ -146,12 +146,13 @@
                                 </div>
                                 <div class="text-center">
                                     @if(!Auth::check())
-                                        <button class="btn btn-danger btn-xl " href="#signin" data-toggle="modal"
-                                                data-target=".bs-modal-sm">Login</button>
+                                        <div class="header-right-side-menu ml-15">
+                                            <a href="#" ><i class="ti-menu" aria-hidden="true"></i></a>
+                                        </div>
                                     @else
                                         <div class="header-right-side-menu testimonial-info align-items-center ml-15">
                                             <div class="">
-                                                <a><img class="rounded-circle ml-15" width="70" href="#" src="{{asset(Auth::user()->avt)}}" alt="avt" type="string">
+                                                <a><img class="rounded-circle ml-15 row" width="70" href="#" src="{{asset(Auth::user()->avt)}}" alt="avt" type="string">
                                                     <ul class="nav-item dropdow row">
                                                         <a class="nav-link active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</a>
                                                         <div class="dropdown-menu">
