@@ -12,31 +12,22 @@
                         <a href="{{url('admin/category/')}}">Dashboard</a>
                     </ol>
                 </div>
-                <form action="{{url("admin/category/editUserPost",['id'=>$user->id])}}" method="post" enctype="multipart/form-data">
+                <form action="{{url("admin/category/editUserPost")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group has-success">
                         <label for="tt-name" class="control-label"><p>list users</p></label>
                         <p>Name</p>
-                        <input id="tt-name" name="name" type="text" value="{{$user->name}}"
+                        <input id="tt-name" name="name" type="text" value="{{$errors->name}}"
                                class="form-control tt-name @if($errors->has("name"))is-invalid @endif">
                         <p>Email</p>
-                        <input id="tt-name" name="email" type="text" value="{{$user->email}}"
+                        <input id="tt-name" name="email" type="text" value="{{$errors->email}}"
                                class="form-control tt-name @if($errors->has("email"))is-invalid @endif">
-                        <p>Password</p>
-                        <input id="tt-name" name="password" type="text" value="{{$user->password}}"
-                               class="form-control tt-name @if($errors->has("password"))is-invalid @endif">
-{{--                                                <p>product quantity</p>--}}
-{{--                                                <input id="tt-name" name="email_verified_at" type="text" value="{{old("email_verified_at")}}"--}}
-{{--                                                       class="form-control tt-name @if($errors->has("email_verified_at"))is-invalid @endif">--}}
-                        <p>Role</p>
-                        <input id="tt-name" name="role" type="number" value="{{$user->role}}"
-                               class="form-control tt-name @if($errors->has("role"))is-invalid @endif">
-                        <p>Remember_token</p>
-                        <input id="tt-name" name="remember_token" type="text" value="{{$user->remember_token}}"
-                               class="form-control tt-name @if($errors->has("remember_token"))is-invalid @endif">
-                        <p>Avatar</p>
-                        <input id="tt-name" name="avt" type="file" value="{{$user->avt}}"
-                               class="form-control tt-name @if($errors->has("avt"))is-invalid @endif">
+                        <p>telephone</p>
+                        <input id="tt-name" name="telephone" type="text" value="{{$errors->telephone}}"
+                               class="form-control tt-name @if($errors->has("telephone"))is-invalid @endif">
+                        <p>Feedback</p>
+                        <input id="tt-name" name="feedback" type="text" value="{{$errors->feedback}}"
+                               class="form-control tt-name @if($errors->has("feedback"))is-invalid @endif">
                         @if($errors->has("email") ||("password") ||("role") ||("avt") ||("name"))
                             <p style="color:red">{{$errors->first("email")}}</p>
                             <p style="color:red">{{$errors->first("password")}}</p>
