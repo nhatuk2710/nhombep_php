@@ -7,7 +7,7 @@
             <li data-toggle="collapse" data-target="#women" class="collapsed active">
                 <a href="#">Woman wear <span class="arrow"></span></a>
                 <ul class="sub-menu collapse" id="women">
-                    <li><a href="#">Midi Dresses</a></li>
+                    <li><a href="#"></a></li>
                     <li><a href="#">Maxi Dresses</a></li>
                     <li><a href="#">Prom Dresses</a></li>
                     <li><a href="#">Little Black Dresses</a></li>
